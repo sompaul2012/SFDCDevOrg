@@ -1,0 +1,140 @@
+<apex:page showHeader="false" controller="LE_CustomerHelloController" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> 
+<head>
+    <apex:includeScript value="{!$Resource.sos_jquery}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <script>
+        $(document).ready(function() {
+            $('.slds-button').css('height','70px');
+            $('.slds-button').css('width','170px');
+            $('[id$=custValue]').css('background-color','#22BEF2');
+            $('[id$=custSenti]').css('background-color','#D9D971');
+            $('[id$=renPros]').css('background-color','#0D8F8F');
+            $('[id$=npsScore]').css('background-color','#310278');
+            
+        });
+    </script>
+</head>
+<style>
+    [hidden], .slds template {
+        display: block !important;
+    }
+</style>
+    <body>
+    <apex:image url="{!URLFOR($Resource.SLDS090, 'assets/images/Dash.PNG')}"/><apex:image url="{!URLFOR($Resource.SLDS090, 'assets/images/Logo.PNG')}"/>
+        <!-- REQUIRED SLDS WRAPPER -->
+        <div class="slds">
+            
+            <!-- MASTHEAD -->
+            <p class="slds-text-heading--label slds-m-bottom--small">
+            <!--    Text You Want to Write -->
+            </p>
+            <!-- / MASTHEAD -->
+            
+            <!-- PAGE HEADER -->
+            <span class="slds-avatar slds-avatar--x-small">
+                <!--<img src="{!URLFOR($Resource.SLDS090, 'assets/images/avatar1.jpg')}" alt="Cognizant Halo" />
+                <img src="{!URLFOR($Resource.SLDS090, 'assets/images/Logo.PNG')}" alt="Cognizant Halo" />-->
+            </span>
+            <!--
+            <p class="slds-text-heading--label">Cognizant</p>
+            <h1 class="slds-text-heading--medium">Customer Halo</h1>
+            -->
+            <!-- / PAGE HEADER -->
+            
+            <!-- PRIMARY CONTENT WRAPPER -->
+            
+            <div class="slds-grid">
+                <div class="slds-col slds-size--2-of-12 slds-col-rule--right slds-col-rule--left slds-col-rule--top slds-col-rule--bottom">
+                    LEFT SECTION
+                    <div class="slds-page-header">
+                    </div>
+                </div>
+                <div class="slds-col slds-size--8-of-12 slds-col-rule--right slds-col-rule--left slds-col-rule--top slds-col-rule--bottom slds-align-middle">
+                    MIDDLE SECTION
+                    <div class="slds-page-header">
+                        <div class="slds-media">
+                            <div class="slds-media__body">
+                                <button class="slds-button slds-button--brand" id="custValue">7000 AVG CUSTOMER VALUE</button>
+                                <button class="slds-button slds-button--brand" id="custSenti">45% CUSTOMER SENTIMENTS</button>
+                                <button class="slds-button slds-button--brand" id="renPros">30% RENEWAL PROPENSITY</button>
+                                <button class="slds-button slds-button--brand" id="npsScore">98% NPS SCORE</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                        <!-- Grap section start-->
+                        <div class="slds-grid slds-grid--align-space">
+                            <div class="slds-col slds-size--1-of-2">                               
+                                <apex:chart data="{!data}" height="220" width="100%" background="#D8DDE6">
+                                    <apex:legend position="left"/>
+                                    <apex:pieSeries labelField="fname" dataField="data1" colorSet="#37241E,#94B3C8,#4D4E24,#BD8025,#816A4A,#F0E68C"/>
+                                    </apex:chart>
+                               
+                            </div>
+                            <div class="slds-col slds-size--1-of-2">
+                               <apex:chart data="{!data}" height="220" width="100%" background="#D8DDE6">
+                                <apex:legend position="left"/>
+                                    <apex:axis type="Numeric" position="left" title="Closed Won" grid="true" fields="data1,data2,data3" dashSize="2">
+                                        <apex:chartLabel />
+                                    </apex:axis>
+                                    <apex:axis type="Category" position="bottom" fields="fname" title="Stacked Bars">
+                                        <apex:chartLabel rotate="315"/>
+                                    </apex:axis>
+                                <apex:barSeries orientation="vertical" axis="left" stacked="true" xField="fname"  yField="data1,data2,data3" title="MacDonald,Promas,Worle"  colorSet="blue,Magenta,Yellow,LightSeaGreen,cyan" >
+                                <apex:chartTips height="20" width="120" rendererFn="renderTooltipStacked"/>
+                                </apex:barSeries>
+                                </apex:chart> 
+                            </div>
+                        </div>
+                        <!-- Grap section end-->
+                    	<!-- Grap 2 section start-->
+                    <div class="slds-grid slds-grid--align-space">
+                            <div class="slds-col slds-size--1-of-2">                               
+                                <apex:chart data="{!data}" height="220" width="100%" background="#D8DDE6">
+                                    <apex:legend position="left"/>
+                                    <apex:pieSeries labelField="fname" dataField="data1" colorSet="#37241E,#94B3C8,#4D4E24,#BD8025,#816A4A,#F0E68C"/>
+                                    </apex:chart>
+                               
+                            </div>
+                            <div class="slds-col slds-size--1-of-2">
+                               <apex:chart data="{!data}" height="220" width="100%" background="#D8DDE6">
+                                <apex:legend position="left"/>
+                                    <apex:axis type="Numeric" position="left" title="Closed Won" grid="true" fields="data1,data2,data3" dashSize="2">
+                                        <apex:chartLabel />
+                                    </apex:axis>
+                                    <apex:axis type="Category" position="bottom" fields="fname" title="Stacked Bars">
+                                        <apex:chartLabel rotate="315"/>
+                                    </apex:axis>
+                                <apex:barSeries orientation="vertical" axis="left" stacked="true" xField="fname"  yField="data1,data2,data3" title="MacDonald,Promas,Worle"  colorSet="blue,Magenta,Yellow,LightSeaGreen,cyan" >
+                                <apex:chartTips height="20" width="120" rendererFn="renderTooltipStacked"/>
+                                </apex:barSeries>
+                                </apex:chart> 
+                            </div>
+                        </div>
+                    	<!-- Grap 2 section end -->
+                     
+                   
+                </div>
+            
+                <div class="slds-col slds-size--2-of-12 slds-col-rule--right slds-col-rule--left slds-col-rule--top slds-col-rule--bottom">
+                    RIGHT SECTION
+                    <div class="slds-page-header">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- / PRIMARY CONTENT WRAPPER -->
+            
+            <!-- FOOTER -->
+            <!-- / FOOTER -->
+            
+        </div>
+        <!-- / REQUIRED SLDS WRAPPER -->
+        
+        <!-- JAVASCRIPT -->
+        <!-- / JAVASCRIPT -->
+        
+    </body>
+    </html>
+</apex:page>

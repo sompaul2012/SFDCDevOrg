@@ -1,0 +1,22 @@
+<apex:page controller="VFWithJSController">
+<apex:form >
+
+<apex:outputLabel >Enter Name</apex:outputLabel><apex:inputText value="{!str2}" id="text1"/><br/>
+<apex:outputlabel >Enter District</apex:outputlabel><apex:inputText value="{!str1}" id="text2"/><br/>
+
+<apex:actionFunction name="myjsfunc" action="{!myconaction}" reRender="func">
+
+<!--<apex:param name="text1" value="{!str1}"/>
+<apex:param name="text2" value="{!str2}"/>-->
+
+</apex:actionFunction>
+
+
+<apex:outputPanel onclick="myjsfunc()" styleClass="btn">Click this Button</apex:outputPanel>
+
+</apex:form>
+<apex:outputPanel id="func">
+<apex:outputText >{!showme}</apex:outputText>
+</apex:outputPanel>
+
+</apex:page>

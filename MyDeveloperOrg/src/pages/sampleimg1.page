@@ -1,0 +1,8 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+    <apex:includeScript value="{! $Resource.cmsResource1 }"/>
+    <p>
+        <apex:image alt="eye" title="eye"
+               url="{!URLFOR($Resource.cmsResource1, 'img/greyhomeonwhite.png')}"/> 
+    </p>
+    
+</apex:page>

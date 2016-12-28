@@ -1,0 +1,7 @@
+<!--My First Lightning Component-->
+<aura:component implements="force:appHostable">
+    <H1 class ="headline">
+        My Lightning Component!
+    </H1>
+    
+</aura:component>

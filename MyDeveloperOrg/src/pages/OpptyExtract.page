@@ -1,0 +1,12 @@
+<apex:page controller="getOpportunityExtract" contentType="text/csv#OpptyExtract.csv">
+ <script>
+        function(){
+        window.close();
+        }
+    </script>
+ "Opprtunity Id","Account Id"
+    <apex:repeat value="{!OpptyDetails}" var="Opp">
+        {!Opp.Id},"{!Opp.AccountId}"
+    </apex:repeat>
+   
+</apex:page>

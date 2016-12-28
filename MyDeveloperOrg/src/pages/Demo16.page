@@ -1,0 +1,15 @@
+<apex:page controller="mycustcontroller" tabstyle="Account">
+<apex:form >
+<apex:pageBlock mode="edit">
+<apex:pageMessages />
+<apex:pageBlockSection >
+<apex:inputField value="{!acct.name}"/>
+<apex:inputField value="{!acct.phone}"/>
+<apex:inputField value="{!acct.industry}"/>
+</apex:pageBlockSection>
+<apex:pageBlockButtons location="bottom">
+<apex:commandButton value="Save" action="{!upsertacct}"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

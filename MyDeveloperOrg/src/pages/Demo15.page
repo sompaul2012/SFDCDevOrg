@@ -1,0 +1,20 @@
+<apex:page standardController="Account" recordSetVar="accounts"
+tabStyle="Account" sidebar="false">
+<apex:form >
+<apex:pageBlock >
+<apex:pageMessages />
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!save}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockTable value="{!accounts}" var="acc">
+<apex:column value="{!acc.name}"/>
+<apex:column headerValue="Industry">
+<apex:inputField value="{!acc.industry}"/>
+</apex:column>
+<!--<apex:column headerValue="Contacts">
+<apex:inputField value="{!acc.contact}"/>
+</apex:column>-->
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

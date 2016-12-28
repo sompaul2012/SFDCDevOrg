@@ -1,0 +1,16 @@
+<apex:page standardController="Account" recordSetVar="a">
+<apex:form >
+<apex:pageblock title="Account Details Demo">
+<apex:pageblockSection >
+<apex:repeat value="{!$ObjectType.Account.FieldSets.Custom_Account_Set}" var="FieldSet">
+<apex:outputField value="{!Account[FieldSet]}"/>
+</apex:repeat>
+</apex:pageblockSection>
+</apex:pageblock>
+</apex:form>
+<apex:form >
+<apex:dataList var="acc" value="{!a}">
+{!acc.Name}
+</apex:dataList>
+</apex:form> 
+</apex:page>

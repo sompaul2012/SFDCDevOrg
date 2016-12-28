@@ -1,0 +1,11 @@
+<apex:page standardController="Account" extensions="CreateDynamicRecords">
+<apex:form >
+<apex:pageBlock title="Enter Account Details">
+<apex:pageblockSection >
+<apex:pageblocksectionItem >
+<apex:inputField value="{!Account.Name}" label="Name"/>
+</apex:pageblocksectionItem>
+</apex:pageblockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

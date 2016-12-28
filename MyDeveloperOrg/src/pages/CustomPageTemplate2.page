@@ -1,0 +1,195 @@
+<apex:page id="StantiveTemplate" controller="cms.CoreController">    
+
+<apex:composition template="{!page_template_reference}">
+     <apex:define name="header">
+         <meta charset="utf-8"/>
+         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+         <!--<apex:stylesheet value="{!URLFOR($Resource.cmsResource1, 'css/main.min')}" />-->
+ 
+         <link href="{!URLFOR($Resource.cmsResource1, 'css/main.css')}" rel="stylesheet" type="text/css" /> 
+
+         <!--<apex:includeScript value="{!URLFOR($Resource.cmsResource1, 'css/main.min')}"/>-->
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+     </apex:define>
+     <apex:define name="body">
+        <main>
+        <!--header-->
+            <header class="clearfix" role="banner">
+            <nav class="navbar navbar-default">
+                <div>
+                        <div class="navbar-header" style="width:270px;height:270px;float:left">
+                             <span class="navbar-brand">
+                                <span>
+                                    <span>
+                                        <div>
+                                            <cms:Panel panelName="mydroppablearea1" panelcontroller="{!controller}" 
+
+panelwidth="120px" panelheight="100px"/>
+                                        </div>
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse" style="width:270px;height:270px;float:right">
+                            <div id="headerrightmenu">
+                                <span>
+                                    <span>
+                                        <div class="mega-menu">
+                                            <ul class="root-level-list">
+                                                <li class="root-level-item home-icon first item0 even">
+                                                    <div class="holder">
+                                                        <a href="/csia/Home_New" title="Home">
+                                                            <span>Home</span>
+                                                        </a>
+                                                        <div class="drop">
+                                                            <div class="drop-t"></div>
+                                                            <div class="drop-holder">
+                                                                <div class="drop-frame"></div>
+                                                            </div>
+                                                            <div class="drop-b"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="root-level-item  item1 odd">
+                                                    <div class="holder">
+                                                        <a href="/csia/aboutmanulife" title="About Manulife">
+                                                            <span>Manulife.ca</span>
+                                                        </a>
+                                                        <div class="drop">
+                                                            <div class="drop-t"></div>
+                                                            <div class="drop-holder">
+                                                                <div class="drop-frame"></div>
+                                                            </div>
+                                                            <div class="drop-b"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="root-level-item  item2 even alt">
+                                                    <div class="holder">
+                                                        <a href="/csia/contactus" title="Contact us">
+                                                            <span>Contact us</span>
+                                                        </a>
+                                                    <div class="drop">
+                                                        <div class="drop-t"></div>
+                                                        <div class="drop-holder">
+                                                            <div class="drop-frame"></div>
+                                                        </div>
+                                                        <div class="drop-b"></div>
+                                                    </div>
+                                                    </div>
+                                                </li>
+                                                <li class="root-level-item  last item3 odd alt lang">
+                                                    <div class="holder">
+                                                        <a href="/csia/Home_New?ocmsLang=fr" title="Français">
+                                                            <span>Français</span>
+                                                        </a>
+                                                        <div class="drop">
+                                                            <div class="drop-t"></div>
+                                                            <div class="drop-holder">
+                                                                <div class="drop-frame"></div>
+                                                            </div>
+                                                            <div class="drop-b"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </span>
+                                </span>
+                            </div>
+                        </div><!--/.nav-collapse -->
+                      </div>
+            </nav>
+            
+            <nav class="navbar-menu show-item" id="mainmenu">
+                 <cms:Panel panelName="mydroppablearea2" panelcontroller="{!controller}" 
+panelwidth="120px" panelheight="100px" panelContentLayouts="ClassStyledMenu,MegaMenu,SimpleHorizontalMenu"/>
+                
+            </nav>
+            </header>
+              <!--content-->
+              <nav>
+         <div class="content-panel clearfix" role="main">
+            <!--bread crumb-->
+            <!--/bread crumb-->
+            <section class="col-xs-12 col-md-9">               
+            
+                <h1>Site map</h1>
+                <ul class="list-square">
+                    <cms:Panel panelName="mydroppablearea3" panelcontroller="{!controller}" panelwidth="120px" 
+
+panelheight="400px" />
+                </ul>   
+            </section>
+            
+            
+         </div> 
+         </nav>
+         <!--content-->
+         <!-- Secondary Footer  !-->
+         <nav>
+         <section class="col-xs-12 col-md-12 secondary-footer">
+                <div class="col-xs-12 col-md-3 secondary-footer-left ">
+                    <ul>
+                        <li><span class="flag-ca">&nbsp;</span></li>
+                        <li><cms:Panel panelName="mydroppablearea4" panelcontroller="{!controller}" panelwidth="120px" 
+
+panelheight="100px"/></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-9 secondary-footer-right">
+                    <ul class="pull-left">
+                    <li><cms:Panel panelName="mydroppablearea5" panelcontroller="{!controller}" 
+panelContentLayouts="ClassStyledMenu,MegaMenu,SimpleHorizontalMenu" panelwidth="120px" panelheight="100px"/></li>
+                    </ul>
+                </div>
+            </section>
+            </nav>
+         <!-- Secondary Footer  !-->
+         
+         <!--footer-->       
+            <footer class="footer clearfix" role="contentinfo">
+                <div class="col-xs-12 col-sm-5 no-padding footer-left-menu">
+                    <span>
+                        <span>
+                            <ul>
+                                <cms:Panel panelName="mydroppablearea6" panelcontroller="{!controller}" panelwidth="120px" 
+panelheight="100px" panelContentLayouts="ClassStyledMenu,MegaMenu,SimpleHorizontalMenu"/>
+                            </ul>
+                        </span>
+                    </span>
+                </div>
+                <div class="col-xs-12 col-sm-7 no-padding footer-right-menu" id="footerrightmenu">
+                    <span>
+                        <span>
+                            <div class="mega-menu">
+                                <ul class="root-level-list">
+                                    <li class="root-level-item  first item0 even">
+                                        <div class="holder">
+                                            <cms:Panel panelName="mydroppablearea7" panelcontroller="{!controller}" 
+panelwidth="120px" panelheight="100px" panelContentLayouts="ClassStyledMenu,MegaMenu,SimpleHorizontalMenu"/>
+                                            <div class="drop">
+                                                <div class="drop-t"></div>
+                                                <div class="drop-holder">
+                                                    <div class="drop-frame"></div>
+                                                </div>
+                                                <div class="drop-b"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                
+                                </ul>
+                            </div>
+                        </span>
+                    </span>
+                </div>
+            </footer>
+        <!--/footer-->
+        </main>
+     </apex:define>
+     <apex:includeScript value="{!URLFOR($Resource.cmsResource1,'js/main.js')}"/>
+     <apex:includeScript value="{!URLFOR($Resource.cmsResource1,'js/plugins/menu_plugins.js')}"/>
+</apex:composition>
+</apex:page>

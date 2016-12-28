@@ -1,0 +1,72 @@
+<!-- Page: -->
+<apex:page standardController="TestA__c" extensions="objectTypeController">
+    <apex:form >
+        <apex:pageBlock title="Enter Object Name">
+            <apex:PageblockSection columns="1" >
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Object"/>
+      <!-- <apex:actionRegion >-->
+                    <apex:inputField value="{!TestA__c.Object_Name__c}">
+                    <apex:actionSupport event="onchange" reRender="ajaxrequest" />
+                    </apex:inputfield>
+      <!--   </apex:actionRegion>-->
+                 </apex:PageBlockSectionItem>
+            </apex:PageBlockSection>
+         
+         <apex:outputPanel id="ajaxrequest">  
+                
+                    <apex:pageBlockSection rendered="{!TestA__c.Object_Name__c=='Account'}">
+                       <apex:pageBlock title="Enter Account Details" id="AccountInsert">
+                               <apex:pageblockSection >
+                                  <apex:pageblockSectionItem >
+                                          <apex:outputLabel >Account Name</apex:outputLabel>
+                                          <apex:inputField value="{!acc.Name}"/>
+                                  </apex:pageblockSectionItem>
+                                  <apex:pageblockSectionItem >
+                                          <apex:outputLabel >Industry</apex:outputLabel>
+                                          <apex:inputField value="{!acc.Industry}"/>
+                                  </apex:pageblockSectionItem>
+                                  <apex:pageblockSectionItem >
+                                          <apex:outputLabel >Phone Number</apex:outputLabel>
+                                          <apex:inputField value="{!acc.Phone}"/>
+                                  </apex:pageblockSectionItem>
+                               
+                     <br/> 
+                          <apex:pageBlockSection >
+                                     <apex:commandLink value="Save Record" action="{!doDML}">
+                                     <apex:param name="ObjectName" value="{!TestA__c.Object_Name__c}" assignTo="{!fieldName}"/>
+                                     </apex:commandLink>
+                          </apex:pageBlockSection>          
+                         
+                           </apex:pageblockSection>
+                           </apex:pageBlock>
+                       </apex:pageblockSection>
+                   
+                  <apex:pageBlockSection rendered="{!TestA__c.Object_Name__c=='Contact'}" >
+                     <apex:pageBlock title="Enter Account Details" id="ContactInsert">
+                          <apex:pageblockSection >
+                              <apex:pageblockSectionItem >
+                              <apex:outputLabel >Contact First Name</apex:outputLabel>
+                              <apex:inputField value="{!con.FirstName}"/>
+                              </apex:pageblockSectionItem>
+                              <apex:pageblockSectionItem >
+                              <apex:outputLabel >Contact Last Name</apex:outputLabel>
+                              <apex:inputField value="{!con.LastName}"/>
+                              </apex:pageblockSectionItem>
+                          <apex:pageBlockSection >
+                                     <apex:commandLink value="Save Record" action="{!doDML}">
+                                     <apex:param name="ObjectName" value="{!TestA__c.Object_Name__c}" assignTo="{!fieldName}"/>
+                                     </apex:commandLink>
+                          </apex:pageBlockSection> 
+                         </apex:pageblockSection>
+                      </apex:pageBlock>
+                  </apex:pageBlockSection>
+                  
+                  <apex:pageBlockSection rendered="{!TestA__c.Object_Name__c=='Lead'}" >
+                      <apex:outputText >Rendered Lead Block</apex:outputText>
+                  </apex:pageBlockSection>
+                        
+         </apex:outputPanel>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

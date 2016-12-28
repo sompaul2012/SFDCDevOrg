@@ -1,0 +1,20 @@
+<apex:page standardController="Account" extensions="RelatedCampaignAcc" action="{!relatedCampaign}">
+    <apex:pageblock title="Related Campaigns">
+        <!--<apex:pageBlockSection >
+        
+            <apex:repeat value="{!ConList}" var="con">
+               <apex:pageblocksectionitem >{!con.Name}</apex:pageblocksectionitem>
+            </apex:repeat>
+             <apex:repeat value="{!CampaignList}" var="cmp">
+                   
+                  
+                   <apex:pageblocksectionitem labelTitle="CampaignName">{!cmp.Name}</apex:pageblocksectionitem>
+               </apex:repeat>
+        </apex:pageBlockSection>-->
+        <apex:pageBlockTable value="{!CamaignMemberList}" var="con">
+            <apex:column value="{!con.Name}"/>
+                        <apex:column value="{!con.CampaignId}"/>
+                                    <apex:column value="{!con.Status}"/>
+        </apex:pageBlockTable>
+      </apex:pageblock>
+</apex:page>

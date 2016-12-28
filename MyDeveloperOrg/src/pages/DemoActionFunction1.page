@@ -1,0 +1,10 @@
+<apex:page controller="exampleActFun1">
+<apex:form >
+<apex:actionFunction action="{!myname}" name="getmyname" rerender="name"/>
+</apex:form>
+
+<apex:outputPanel onclick="getmyname()" styleClass="btn">
+Get My Name
+</apex:outputPanel>
+<apex:outputText id="name" value="{!mname}"/>
+</apex:page>

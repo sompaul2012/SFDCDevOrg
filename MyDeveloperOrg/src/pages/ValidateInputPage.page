@@ -1,0 +1,17 @@
+<apex:page controller="ValidateInputParams">
+    <apex:form >
+        <h1>Enter the name</h1>
+        <br />
+        <apex:inputText label="Enter Name" value="{!name}" id="ip"/>     
+        <apex:commandButton value="Click" onclick="validateinput('{!$Component.ip}');return false;"/>
+    </apex:form>
+    <script>
+    function validateinput()
+    {
+
+        var x= document.getElementById("ip").value;
+        alert('value:' + x);
+        
+    }
+    </script>
+</apex:page>

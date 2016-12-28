@@ -1,0 +1,60 @@
+<apex:page docType="html-5.0" standardController="Contact">
+
+          
+
+    <p>Time Series One</p>
+    
+    <canvas id="timeSeriesOneChart" width="600" height="200"></canvas>
+
+    
+    <p>Time Series Two</p>
+    
+    <canvas id="timeSeriesTwoChart" width="600" height="200"></canvas>
+    
+    <script src="{!$Resource.LAB_SmoothieCharts}"></script>
+    <script type="text/javascript">      
+        //two artificial series of streaming data
+        var timeSeriesOne = new TimeSeries();
+        var timeSeriesOneData = [50,70,100,90,75,55,10,50,50,50];
+        var timeSeriesOneCounter = 0;
+        
+        var timeSeriesTwo = new TimeSeries();
+        var timeSeriesTwoData = [50,100,50,0,50,50,50,50,50,50];
+        var timeSeriesTwoCounter = 0;
+        
+        setInterval(function() {
+            console.log(timeSeriesOneData[timeSeriesOneCounter]);
+            timeSeriesOne.append(new Date().getTime(), timeSeriesOneData[timeSeriesOneCounter]);
+            timeSeriesOneCounter++;
+            if (timeSeriesOneCounter == timeSeriesOneData.length) {
+                timeSeriesOneCounter = 0;
+            }
+        },500);
+        
+        setInterval(function() {
+            console.log(timeSeriesTwoData[timeSeriesTwoCounter]);
+            timeSeriesTwo.append(new Date().getTime(), timeSeriesTwoData[timeSeriesTwoCounter]);
+            timeSeriesTwoCounter++;
+            if (timeSeriesTwoCounter == timeSeriesTwoData.length) {
+                timeSeriesTwoCounter = 0;
+            }
+        },500);
+        
+        
+        function createTimelineOne() {
+            var chart = new SmoothieChart();
+            chart.addTimeSeries(timeSeriesOne, { strokeStyle: 'rgba(0, 255, 0, 1)', fillStyle: 'rgba(0, 255, 0, 0.2)', lineWidth: 4 });
+            chart.streamTo(document.getElementById("timeSeriesOneChart"), 500);
+        }
+        
+        function createTimelineTwo() {
+            var chart = new SmoothieChart();
+            chart.addTimeSeries(timeSeriesTwo, { strokeStyle: 'rgba(0, 255, 0, 1)', fillStyle: 'rgba(0, 255, 0, 0.2)', lineWidth: 4 });
+            chart.streamTo(document.getElementById("timeSeriesTwoChart"), 500);
+        }
+    
+    createTimelineOne();
+    createTimelineTwo();
+    </script>
+    
+</apex:page>

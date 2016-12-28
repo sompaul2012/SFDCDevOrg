@@ -1,0 +1,27 @@
+<apex:page standardcontroller="Lead" extensions="EmailManager">
+    <apex:form >
+        <apex:pageBlock title="Send Email from Lead">
+            <apex:pageBlockSection columns="1">
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel >To::</apex:outputLabel>
+                   <apex:inputText label="Email" value="{!address}"/>
+                </apex:PageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:PageblockSection columns="1" >
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel >Subject::</apex:outputLabel>
+                 <apex:inputText label="Subject" value="{!subject}" />
+                </apex:PageBlockSectionItem>
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel >Body::</apex:outputLabel>
+                  <apex:inputTextarea label="Description" value="{!body}" />
+                </apex:PageBlockSectionItem>
+                <apex:pageBlockSection >
+                	
+                    <apex:commandbutton value="Send" action="{!sendMail}"/>
+                  
+                                 </apex:pageBlockSection>
+            </apex:PageblockSection>  
+        </apex:pageBlock>
+        </apex:form>         
+</apex:page>

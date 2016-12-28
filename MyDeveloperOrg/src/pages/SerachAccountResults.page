@@ -1,0 +1,25 @@
+<apex:page controller="RequestResultController">
+    <apex:form >
+        <apex:pageBlock mode="edit" id="block">
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="searchAccount">Search Account</apex:outputLabel>
+                    <apex:panelGroup >
+                        <apex:inputtext id="searchAccount1" value="{!accname}"/><br/>
+                        <apex:inputtext id="searchAccount2" value="{!acctype}"/><br/>
+                        <apex:commandButton action="{!doSearch}" value="Search" rerender="block" status="stat"/>
+                    </apex:panelGroup>                    
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:actionStatus id="stat" startText="Requesting for Account"/>
+            <apex:pageBlockSection title="Account Results" id="results">
+                <apex:pageBlockTable value="{!accountResults}" var="acc" rendered="{!NOT(ISNULL(accountResults))}">
+                    <apex:column value="{!acc.type}"/>
+                    <apex:column value="{!acc.Industry}"/>
+                    <apex:column value="{!acc.name}"/>
+                    <apex:column value="{!acc.Integration_Id__c}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

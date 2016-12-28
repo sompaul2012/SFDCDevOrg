@@ -1,0 +1,7 @@
+<apex:page controller="ExportObjectFieldsController" action="{!showFields}" contentType="text/csv#FieldExtract.csv"  language="en-US" cache="True">
+   
+ "API Name","Data Type: Label Name"
+    <apex:repeat value="{!fields}" var="fls">
+        {!fls.key},"{!fls.val}"
+    </apex:repeat>
+</apex:page>

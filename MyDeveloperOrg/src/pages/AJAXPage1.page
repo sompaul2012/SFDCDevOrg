@@ -1,0 +1,23 @@
+<apex:page >
+<script type="text/javscript" src="../../soap/ajax/35.0/connection.js">
+function queryres()
+{
+var result = sforce.connection.query("Select Name,Id from User",{onSuccess : success,onFailure : failure});
+}
+
+    function success(result) {
+        var records = result.getArray("records");
+        for (var i=0; i<records.length; i++) {
+            var record = records[i];
+            log(record.Name + " -- " + record.Id);
+        }
+}
+function failure(error) {
+log("An error has occurred " + error);
+}
+
+</script>
+<apex:outputPanel onclick="queryres()" styleClass="btn" >
+Hit Me
+</apex:outputPanel>
+</apex:page>

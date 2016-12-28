@@ -1,0 +1,9 @@
+<apex:page controller="ReturnAccountList" id="pg">
+
+ <apex:repeat value="{!accounts}" var="str">
+<apex:outputText value="{!str.name}"/>
+<br/>
+
+
+  </apex:repeat>    
+</apex:page>

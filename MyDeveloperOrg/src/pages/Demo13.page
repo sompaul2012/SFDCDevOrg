@@ -1,0 +1,14 @@
+<apex:page controller="mycustcontroller1">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+<apex:inputField value="{!leaddetails.firstname}"/>
+<apex:inputField value="{!leaddetails.lastname}"/>
+<apex:inputField value="{!leaddetails.email}"/>
+<apex:inputField value="{!leaddetails.company}"/>
+<apex:messages />
+<apex:commandButton action="{!updatelead}" value="Update Lead"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

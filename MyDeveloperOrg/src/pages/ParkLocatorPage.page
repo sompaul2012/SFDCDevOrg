@@ -1,0 +1,29 @@
+<apex:page controller="ParkLocatorController">
+<apex:messages />
+    <apex:form >
+             
+    <apex:pageblock title="List of Parks">
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton value="Enter Country Name" action="{!country}" reRender="ajaxreq"/>
+                </apex:pageBlockButtons>
+                
+        <apex:pageBlockSection columns="1">
+                <apex:outputText >Enter Country Name</apex:outputText>
+                <apex:inputText value="{!country_nm}"/>   
+                <apex:outputPanel id="ajaxreq">
+                    <apex:pageblocksection rendered="{!li_parks!=null}">
+                        <apex:pageBlock title="Parks">
+                        <apex:pageBlockSection title="List of Parks">
+                        <apex:pageblockSectionItem >
+                                <apex:repeat value="{!li_parks}" var="li">
+                                    <apex:outputText value="{!li}"/>
+                                </apex:repeat>
+                            </apex:pageblockSectionItem>
+                            </apex:pageBlockSection>
+                        </apex:pageBlock>
+                    </apex:pageblocksection>
+                </apex:outputPanel>
+           </apex:pageBlockSection>
+    </apex:pageblock>
+    </apex:form>
+</apex:page>

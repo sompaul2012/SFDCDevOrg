@@ -1,0 +1,18 @@
+<apex:page >
+    <A HREF="#" onClick="testGetPageInfo();return false">
+        Click here to get page information</A> 
+
+    <apex:includeScript value="/support/console/26.0/integration.js"/>
+    <script type="text/javascript">
+        function testGetPageInfo() {
+            //Get the page information of 'scc-pt-1'
+           //This value is for example purposes only
+             var tabId = 'scc-pt-1';
+              sforce.console.getPageInfo(tabId , showPageInfo);
+        }
+        
+        var showPageInfo = function showPageInfo(result) {
+            alert('Page Info: ' + result.pageInfo);
+            };
+  </script>
+</apex:page>

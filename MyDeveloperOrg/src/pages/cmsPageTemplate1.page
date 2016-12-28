@@ -1,0 +1,36 @@
+<apex:page controller="cms.CoreController" id="StantiveTemplate" >
+    <apex:composition template="{!page_template_reference}">
+
+        <apex:define name="header">
+        </apex:define>
+
+        <apex:define name="body">
+            <!--First cms panel for droppable content -->
+            <div>
+                <cms:Panel panelName="mydroppablearea1" panelcontroller="{!controller}" panelwidth="120px" panelheight="100px"/>
+            </div>
+            <div>
+                <cms:Panel panelName="mydroppablearea3" panelcontroller="{!controller}" panelwidth="120px" panelheight="100px"/>
+            </div>
+            <div>
+                <cms:SingleImagePanel panelName="image1" panelController="{!controller}" panelWidth="120px;" panelHeight="756px" />
+            </div>
+            <div>
+                <cms:SinglePlainTextPanel panelName="text1" panelController="{!controller}" panelHeight="50px" panelwidth="100px"/>
+            </div>
+            <!-- Panel with tabulor sturcture -->
+                <table cellspacing="0" cellpadding="5" border="1">
+                <tr>
+                    <td>
+                                <!--Seond cms panel for droppable content -->
+                        <cms:Panel panelName="mydroppablearea2" panelController="{!controller}" panelWidth="120px;" panelHeight="756px" />
+                    </td>
+                </tr>
+                
+                </table>
+            <!-- Panel with tabulor sturcture -->                
+        </apex:define>
+
+    </apex:composition>
+
+</apex:page>

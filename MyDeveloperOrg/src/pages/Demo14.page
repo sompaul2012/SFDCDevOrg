@@ -1,0 +1,12 @@
+<apex:page controller="jscontroller">
+
+<apex:form >
+<apex:actionFunction action="{!getrelatedOpty}" name="myrelatedOpty"/>
+<apex:pageBlock >
+<apex:pageblockSection >
+<apex:commandButton value="Open URL" onclick="myrelatedOpty()"/>
+</apex:pageblockSection>
+</apex:pageBlock>
+</apex:form>
+
+</apex:page>
